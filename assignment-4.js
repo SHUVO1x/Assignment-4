@@ -20,6 +20,7 @@ function  onlyCharacter( str ) {
 }
 
 
+
 // problem-3
 function  bestTeam( player1, player2 ) {
        if(Array.isArray(player1) || player1 === null || Array.isArray(player2) || player2 === null){
@@ -36,6 +37,8 @@ function  bestTeam( player1, player2 ) {
 
 }
 
+
+
 // problem -4
 function  isSame(arr1 , arr2 ) {
     if((Array.isArray(arr1)) && Array.isArray(arr2) ){
@@ -45,8 +48,29 @@ function  isSame(arr1 , arr2 ) {
     return "Invalid";
 }
 
+
 // problem-5
 function  resultReport( marks ) {
+    if(Array.isArray(marks)){
+       
+        let sumMark=0;
+        let passMark=0;
+        let failMark=0;
+        for(const mark of marks){
+            sumMark=sumMark+mark;
+            if(mark>39){
+                passMark++;
+            }
+            else { failMark++}
+        }
+        const sumRound= Math.round(sumMark / marks.length );
+        if(!isNaN(sumRound))
+        {return {finalScore: sumRound, pass: passMark, fail: failMark };}
+        else{ 
+            return { finalScore:0 , pass: passMark, fail: failMark }
+        }
+    }
+    return "Invalid"
 
 }
 
